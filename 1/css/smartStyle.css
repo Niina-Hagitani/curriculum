@@ -1,0 +1,45 @@
+@media screen and (max-width: 479px) {
+
+    .wrapper {
+        width: 200px;
+    }
+
+    .header {
+        display: block;
+        height: 200px;
+    }
+    
+    .box:first-child {
+        margin: 0 70px;
+        margin-top: 20px;
+    }
+
+    .box {
+        margin:70px 70px ;
+        position: absolute;
+    }
+
+    .box:last-child {
+        margin-top:120px
+    }
+
+    .side {
+        width: 200px;
+        height: 100px;
+    }
+
+    .right {
+        width: 200px;
+        height: 180px;
+    }
+
+    .box2 {
+        margin: 0 30px 10px 30px;
+        box-sizing: border-box;
+    }
+
+    .box2:first-child{
+        margin-top: 20px;
+    }
+
+}
