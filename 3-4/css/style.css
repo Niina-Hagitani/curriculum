@@ -1,0 +1,19 @@
+body {
+    background-color: #808080;
+    font-family: serif;
+    text-align: center;
+    color: #fff;
+}
+
+.in-title {
+    margin-top: 15%;
+    margin-bottom: 0;
+}
+
+.in-in {
+    margin-top: 30px;
+}
+
+.qu-p {
+    margin-top: 10%;
+}
