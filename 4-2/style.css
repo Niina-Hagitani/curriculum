@@ -1,0 +1,54 @@
+
+.flex {
+    display: flex;
+}
+
+.logo {
+    width: 200px;
+    height: 120px;
+    background-color: #add8e6;
+}
+
+.name {
+    width: 800px;
+    height: 60px;
+    background-color: #87ceed;
+}
+
+.name p {
+    text-align: right;
+    margin: 0;
+    line-height: 60px;
+}
+
+.time {
+    width: 800px;
+    height: 60px;
+    background-color: #00ffff;
+}
+
+.time p {
+    text-align: right;
+    margin: 0;
+    line-height: 60px;
+}
+
+table {
+    width: 80px;
+    margin:10px auto;
+    width: 1000px;
+}
+
+.footer {
+    width: 1000px;
+    height: 50px;
+    background-color: #00ced1;
+}
+
+th {
+    background-color: #87ceed;
+}
+
+td {
+    background-color: #e0ffff;
+}
