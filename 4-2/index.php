@@ -1,5 +1,10 @@
 <?php
     require_once("getData.php");
+
+    // getData()クラスのインスタンス化・getUserData()関数・getPostData()関数の呼び出し
+    $data = new getData();
+    $userData = $data->getUserData();
+    $postData = $data->getPostData();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -19,8 +24,6 @@
             <div class="name">
                 <p>ようこそ
                 <?php 
-                $data = new getData();
-                $userData = $data->getUserData();
                 echo $userData['last_name'];
                 echo $userData['first_name'];
                  ?>
@@ -43,26 +46,27 @@
             <th>本文</th>
             <th>投稿日</th>
         </tr>
-                <?php
-                $postData = $data->getPostData();
-                while ($row = $postData->fetch(PDO::FETCH_ASSOC)){
-                    echo '<tr>';
-                    echo'<td>'. $row['id'].'</td>';
-                    echo'<td>'. $row['title'].'</td>';
-                    echo'<td>';
-                    if($row['category_no'] == 1) {
-                        echo '食事';
-                    }elseif($row['category_no'] == 2) {
-                        echo '旅行';
-                    } else {
-                        echo 'その他';
-                    }
-                    echo '</td>';
-                    echo'<td>'. $row['comment'].'</td>';
-                    echo'<td>'. $row['created'].'</td>';
-                    echo '</tr>';
-                }
-                ?>
+        <tr>
+
+        </tr>
+        <tr>
+            <?php
+            while ($row = $postData->fetch(PDO::FETCH_ASSOC)){ ?>
+            <td><?php echo $row['id'];?></td>
+            <td><?php echo $row['title'];?></td>
+            <td><?php
+                if($row['category_no'] == 1) {
+                    echo '食事';
+                }elseif($row['category_no'] == 2) {
+                    echo '旅行';
+                } else {
+                    echo 'その他';
+                }?>
+            </td>
+            <td><?php echo $row['comment'];?></td>
+            <td><?php echo $row['created'];?></td>
+        </tr>    
+        <?php } ?>
     </table>
     <div class="footer">
         Y&I group.inc
