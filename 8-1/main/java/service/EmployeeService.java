@@ -25,7 +25,7 @@ public class EmployeeService {
  /** ・ユーザー名 */
  private static final String USER = "postgres";
  /** ・パスワード */
- private static final String PASS = "arsg1527";
+ private static final String PASS = "postgres";
  /** ・タイムフォーマット */
  private static final String TIME_FORMAT = "yyyy/MM/dd HH:mm:ss";
  
@@ -67,7 +67,9 @@ public class EmployeeService {
   // preparedStatementに実行したいSQLを格納
  preparedStatement = connection.prepareStatement(SQL_UPDATE);
   // 問④ preparedStatementを使って、一番目のindexに今の時間をセットしてください。2番目のindexにIDをセットしてください。
- 
+ java.sql.Timestamp currentTimestamp = new java.sql.Timestamp(cal.getTimeInMillis());
+ preparedStatement.setTimestamp(1, currentTimestamp);
+ preparedStatement.setTimestamp(2, id);
   // 問⑤ UPDATEを実行する文を記述
  
  /*
